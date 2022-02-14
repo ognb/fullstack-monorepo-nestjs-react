@@ -1,0 +1,56 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Recipe {
+  id: ID!
+  title: String!
+}
+
+type AgentView {
+  id: Float!
+  status: Float!
+  companyName: String!
+  firstName: String!
+  lastName: String
+  email: String!
+  img: String
+  description: String
+  workPhone: String
+  mobile: String
+  skype: String
+  facebook: String
+  twitter: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  token: String
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  recipes: [Recipe!]!
+  agents: [AgentView!]!
+}
+
+type Mutation {
+  createAgent(input: AgentInput!): AgentView!
+}
+
+input AgentInput {
+  companyName: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+  mobile: String!
+  workPhone: String
+  img: String
+  description: String
+  skype: String
+  facebook: String
+  twitter: String
+}

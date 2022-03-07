@@ -14,8 +14,30 @@ interface PageProps {
 }
 
 export const App: NextPage<PageProps> = ({ users }) => {
-  console.log(users);
-  return <div className="App">test</div>;
+  return (
+    <table className="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {users.map((el) => {
+          return (
+            <tr key={el.id}>
+              <th scope="row">{el.id}</th>
+              <td>{el.firstName}</td>
+              <td>{el.lastName}</td>
+              <td>{el.email}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

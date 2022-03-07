@@ -9,7 +9,9 @@
       "**/@nestjs",
       "**/@nestjs/**",
       "**/@prisma",
-      "**/@prisma/**"
+      "**/@prisma/**",
+      "**/@bcryptjs",
+      "**/@bcryptjs/**"
     ]
   },
   "scripts": {

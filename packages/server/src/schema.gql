@@ -7,23 +7,13 @@ type Recipe {
   title: String!
 }
 
-type AgentView {
+type User {
   id: Float!
-  status: Float!
-  companyName: String!
   firstName: String!
   lastName: String
   email: String!
-  img: String
-  description: String
-  workPhone: String
-  mobile: String
-  skype: String
-  facebook: String
-  twitter: String
   createdAt: DateTime!
   updatedAt: DateTime!
-  token: String
 }
 
 """
@@ -33,24 +23,16 @@ scalar DateTime
 
 type Query {
   recipes: [Recipe!]!
-  agents: [AgentView!]!
+  users: [User!]!
 }
 
 type Mutation {
-  createAgent(input: AgentInput!): AgentView!
+  createUser(input: UserInput!): User!
 }
 
-input AgentInput {
-  companyName: String!
+input UserInput {
   firstName: String!
   lastName: String!
   email: String!
   password: String!
-  mobile: String!
-  workPhone: String
-  img: String
-  description: String
-  skype: String
-  facebook: String
-  twitter: String
 }

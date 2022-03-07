@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
-import { AgentView, AgentInput } from './agent.model';
+import { User, UserInput } from './user.model';
 // import * as bcrypt from 'bcryptjs';
 
 @Injectable()
-export class AgentService {
+export class UserService {
   constructor(private readonly prisma: PrismaService) {}
 
   // // check Logged in
@@ -22,21 +22,21 @@ export class AgentService {
   //   return agents;
   // }
 
-  async findAll(): Promise<AgentView[]> {
-    const agents = this.prisma.agents.findMany({
-      where: { status: 0 },
+  async findAllUser(): Promise<User[]> {
+    const users = this.prisma.users.findMany({
+      // where: { status: 0 },
     });
-    return agents;
+    return users;
   }
 
-  async createAgent(input: AgentInput): Promise<AgentView | null> {
-    const newAgent = {
+  async createUser(input: UserInput): Promise<User | null> {
+    const newUser = {
       ...input,
-      status: 0,
+      // status: 0,
       // password: await bcrypt.hash(input.password, 10),
     };
-    const agent = this.prisma.agents.create({
-      data: newAgent,
+    const agent = this.prisma.users.create({
+      data: newUser,
     });
     return agent;
   }

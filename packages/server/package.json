@@ -1,7 +1,7 @@
 {
-  "name": "@monorep/serer",
+  "name": "@monorepo/server",
   "version": "1.0.0",
-  "author": "Otgonbaatar Ganbat",
+  "author": "",
   "private": true,
   "scripts": {
     "prebuild": "rimraf dist",
@@ -16,13 +16,18 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "prisma-cli-generate": "prisma generate",
+    "db-push": "prisma db push",
+    "db-seed": "prisma db seed",
+    "migrate": "prisma migrate dev --name",
+    "migrate:reset": "prisma migrate rest"
   },
   "dependencies": {
-    "@nestjs/apollo": "^10.0.2",
+    "@nestjs/apollo": "^10.0.6",
     "@nestjs/common": "^8.2.6",
     "@nestjs/core": "^8.2.6",
-    "@nestjs/graphql": "^10.0.2",
+    "@nestjs/graphql": "^10.0.6",
     "@nestjs/platform-express": "^8.0.0",
     "@prisma/client": "^3.9.2",
     "apollo-server-express": "^3.6.3",

@@ -37,6 +37,7 @@ node_modules
 /packages/app/node_modules
 /packages/app/.pnp
 /packages/app/.pnp.js
+/packages/app/.next
 
 # testing
 /packages/app/coverage

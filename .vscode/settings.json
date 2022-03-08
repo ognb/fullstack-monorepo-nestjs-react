@@ -1,8 +1,0 @@
-{
-  "eslint.workingDirectories": ["./packages/server"],
-  "files.eol": "\n",
-  "editor.tabSize": 2,
-  "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
-  }
-}
